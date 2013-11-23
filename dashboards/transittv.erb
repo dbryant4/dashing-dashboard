@@ -1,0 +1,112 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 5
+  Dashing.cycleDashboards({timeInSeconds: 10, stagger: true});
+});
+</script>
+
+
+<% content_for :title do %>1080p Transit dashboard<% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+      <i class="icon-time icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Image" data-image="/logo.png"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new 1080p dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="wmata-bus-alerts" data-view="News" data-title="WMATA Bus Advisories" data-interval="30"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="WAMU" data-view="News" data-title="WAMU" data-interval="30"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="npr" data-view="News" data-title="NPR" data-interval="30"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cnn" data-view="News" data-title="CNN" data-interval="30"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="bbc" data-view="News" data-title="BBC" data-interval="30"></div>
+    </li>
+
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #todayilearned"></div>
+      <i class="icon-twitter icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="nest" data-view="Nest" data-title="Nest Temp"></div>
+    </li> 
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="aww" data-view="RandomAww"></div>
+    </li>
+
+
+  </ul>
+  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
+</div>
+
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+      <i class="icon-time icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-columbiaheights" data-view="List" data-unordered="true" data-title="Columbia Heights"  style="background-color:#32C9A9;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-woodleypark" data-view="List" data-unordered="true" style="background-color:#dc5945;"  data-title="Woodley Park" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-metrocenter" data-view="List" data-unordered="true" style="background-color:#ff9618;" data-title="Metro Center" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-galleryplace" data-view="List" data-unordered="true" style="background-color:#32C9A9;" data-title="Gallery Place" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="wmata-railincidents" data-view="List" data-unordered="true" data-title="Metro Rail Incidents" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-1002873" data-view="List" data-unordered="true" style="background-color:#9c4274;" data-title="16th & Harvard South" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="Mt Pleasent & Harvard" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="wmata-bus-alerts" data-view="News" data-title="WMATA Bus Advisories" data-interval="30"></div>
+    </li>
+
+  </ul>
+</div>
