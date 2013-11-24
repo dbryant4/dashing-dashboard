@@ -8,3 +8,4 @@ gem 'twitter', "4.8.1"
 gem 'nokogiri'
 gem 'htmlentities'
 gem 'nest_thermostat'
+gem 'xml-simple'
