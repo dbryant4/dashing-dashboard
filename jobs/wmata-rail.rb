@@ -8,8 +8,6 @@ station_mappings = {
   'woodleypark' => 'A04'
 }
 
-puts "#{ENV['WMATA_API_KEY']}"
-
 SCHEDULER.every '30s', :first_in => 0  do
   station_mappings.each do |station, codes|
     uri = URI("#{api_uri}#{codes}?api_key=#{api_key}")
