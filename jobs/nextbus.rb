@@ -17,13 +17,26 @@ SCHEDULER.every '30s', :first_in => 0  do
     res = Net::HTTP.start(uri.hostname, uri.port) {|http|
       http.request(req)
     }
-    predictions = XmlSimple.xml_in(res.body, {})['predictions'][0]['direction'][0]
-    arrivals = Array.new
-    predictions['prediction'].each do |prediction|
-      arrivals.push (
-        { label: "#{predictions['title']}", value: "#{prediction['minutes']}" }
-      )
+    arrivals = Hash.new
+
+    predictions = XmlSimple.xml_in(res.body, {})['predictions']
+    arrivals['agencyTitle'] = predictions[0]['agencyTitle']
+    arrivals['routeTitle']  = predictions[0]['routeTitle']
+    arrivals['stopTitle']   = predictions[0]['stopTitle']
+    arrivals['routeTag']    = predictions[0]['routeTag']
+    arrivals['busArrivals'] = Array.new
+
+    predictions[0]['direction'].each do |direction|
+      direction['prediction'].each do |prediction|
+        arrivals['busArrivals'].push (
+          {
+            minutes: prediction['minutes'],
+            vehicle: prediction['vehicle'],
+            direction: direction['title']
+          }
+        )
+      end
     end
-    send_event("nextbus-#{stop['agency_tag']}-#{stop['route_tag']}-#{stop['stop_tag']}", { items: arrivals })
+    send_event("nextbus-#{stop['agency_tag']}-#{stop['route_tag']}-#{stop['stop_tag']}", arrivals)
   end
 end

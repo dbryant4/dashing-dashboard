@@ -1,0 +1,13 @@
+<h4 class="title" data-bind="agencyTitle"></h2>
+<h1 class="title" data-bind="stopTitle"></h1>
+
+<ul>
+  <li data-foreach-item="busArrivals">
+  <span class="label" data-bind="item.direction"></span>
+  <span class="value" data-bind="item.minutes"></span>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo"></p>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
