@@ -1,6 +1,5 @@
 # This script connects to WMATA's API. Therefore, you need a WMATA api key.
 api_uri = 'http://capitalbikeshare.com/data/stations/bikeStations.xml'
-station_ids = []
 
 require 'xmlsimple'
 
@@ -12,10 +11,15 @@ SCHEDULER.every '30s', :first_in => 0  do
   }
   stations = XmlSimple.xml_in(res.body, {})['station']
   stations.each do |station|
-    bike_station = [
-      { label: "Available Bikes", value: "#{station['nbBikes'][0]}"},
-      { label: "Empty Docks", value: "#{station['nbEmptyDocks'][0]}"}
-    ]
-    send_event("cabi-#{station['id'][0]}", { items: bike_station })
+    bike_station =
+      {
+        id: station['id'][0],
+        name: station['name'][0],
+        bikes: station['nbBikes'][0],
+        docks: station['nbEmptyDocks'][0],
+        lastupdate: station['latestUpdateTime'][0]
+      }
+    
+    send_event("cabi-#{station['id'][0]}", bike_station )
   end
 end
