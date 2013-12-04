@@ -1,0 +1,67 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 5
+  Dashing.cycleDashboards({timeInSeconds: 10, stagger: true});
+  Dashing.cycleGridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1}],[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1}]')
+});
+</script>
+
+
+<% content_for :title do %>1080p Transit Near Work Dashboard<% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock" style="background-color:#32c9a9"></div>
+      <i class="icon-time icon-background"></i>
+    </li>
+      
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="welcome-work" data-view="Text" data-title="Work" data-text="Transit Near Work" data-moreinfo=""></div>
+      <i class="icon-map-marker icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-metrocenter" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="Metro Center" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-galleryplace" data-view="List" data-unordered="true" style="background-color:#ff9618;" data-title="Gallery Place" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="wmata-railincidents" data-view="List" data-unordered="true" data-title="Metro Rail Incidents" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-1003728" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="11th & H St NW" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-103" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="Metro Center / 12th & G ST NW" data-moreinfo=""></div>
+      <i class="icon-bold icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-125" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="11th & F St NW" data-moreinfo=""></div>
+      <i class="icon-bold icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-91" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="13th & New York Ave NW" data-moreinfo=""></div>
+      <i class="icon-bold icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-92" data-view="List" data-unordered="true" style="background-color:#dc5945;" data-title="8th & H St NW" data-moreinfo=""></div>
+      <i class="icon-bold icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-bus-alerts" data-view="News" data-title="WMATA Bus Advisories" data-interval="30"></div>
+    </li>
+
+  </ul>
+</div>
