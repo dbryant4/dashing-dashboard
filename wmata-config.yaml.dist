@@ -3,3 +3,31 @@ wmata-api-keys:
   - key1
   - key2
   - key3
+bus:
+  defaults:
+    char_limit: 23
+    prediction_limit: 7
+  stops:
+    1002873:
+    1001947:
+    1003040:
+    1003728:
+rail:
+  defaults:
+    char_limit: 23
+    prediction_limit: 7
+  stations:
+    galleryplace:
+      codes:
+        - B01
+        - F01
+    metrocenter:
+      codes:
+        - A01
+        - C01
+    columbiaheights:
+      codes:
+        - E04
+    woodleypark:
+      codes:
+        - A04
