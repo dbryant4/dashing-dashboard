@@ -18,10 +18,12 @@ rail:
     prediction_limit: 7
   stations:
     galleryplace:
+      prediction_limit: 24
       codes:
         - B01
         - F01
     metrocenter:
+      prediction_limit: 24
       codes:
         - A01
         - C01
