@@ -167,7 +167,6 @@ class Dashing.Car2go extends Dashing.Widget
         map: @car2go
 
     else
-      console.log(@map_markers)
       if @map_markers.length > 0
         marker.set('map', null) for marker in @map_markers
       @map_markers = []
