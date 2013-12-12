@@ -36,7 +36,7 @@ SCHEDULER.every '30s', :first_in => 0  do
         markers << coordinates
       end
     end
-    send_event("car2go-#{poi}", { :count =>count, :vehicles => vehicles_nearby, :markers => markers })
+    send_event("car2go-#{poi}", { :count =>count, :vehicles => vehicles_nearby, :markers => markers, :origin => [options['latitude'], options['longitude']] })
   end
 
 end

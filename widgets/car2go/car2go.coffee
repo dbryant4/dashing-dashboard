@@ -174,10 +174,14 @@ class Dashing.Car2go extends Dashing.Widget
         marker_object = new google.maps.Marker
           position: new google.maps.LatLng(marker[0],marker[1])
           map: @car2go
+          icon: '/assets/car2go_marker.png'
         @map_markers.push marker_object
 
-    if @map_markers.length == 1
-      @car2go.set('zoom', 7)
+    if @map_markers.length == 0
+      @car2go.set('zoom',14)
+      @car2go.set('center', new google.maps.LatLng(data.origin[0], data.origin[1]))
+    else if @map_markers.length == 1
+      @car2go.set('zoom', 14)
       @car2go.set('center', @map_markers[0].position)
     else
       bounds = new google.maps.LatLngBounds
