@@ -35,7 +35,7 @@ SCHEDULER.every '30s', :first_in => 0  do
     num_trains = 0
     next_trains.each do |train|
       if num_trains < prediction_limit then
-        trains.push( { label: "#{train['Line']} #{train['DestinationName'][0..char_limit]}", value: "#{train['Min']}"} )
+        trains.push( { label: "#{train['Line']} #{train['DestinationName'][0..char_limit]}", value: "#{train['Min']}", color: train['Line']} )
         num_trains += 1
       end
     end
