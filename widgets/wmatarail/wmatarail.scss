@@ -44,6 +44,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   .label {
     color: $label-color;
+    margin-left: 6px;
   }
 
   .value {
@@ -51,6 +52,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     margin-left: 12px;
     font-weight: 600;
     color: $value-color;
+    margin-right:6px;
   }
 
   .updated-at {
