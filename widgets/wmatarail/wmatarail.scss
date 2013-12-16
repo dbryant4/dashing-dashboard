@@ -61,4 +61,35 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     color: $moreinfo-color;
   }
 
+  .RD {
+    background-color: #B30202;
+    opacity: 0.9;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .OR {
+    background-color: #FF8800;
+    opacity: 0.9;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .BL {
+    background-color: #004A9E;
+    opacity: 0.9;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .GR {
+    background-color: #5AA15A;
+    opacity: 0.9;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .YL {
+    background-color: #C7BA00;
+    opacity: 0.9;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+
 }
