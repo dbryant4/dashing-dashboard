@@ -23,22 +23,17 @@ SCHEDULER.every '30s', :first_in => 0  do
       prediction_limit = wmata_config['bus']['defaults']['prediction_limit']
     end
 
-    if options != nil and options['char_limit']
-      char_limit = options['char_limit'] - 1
-    else
-      char_limit = wmata_config['bus']['defaults']['char_limit'] - 1
-    end
-
-    predictions = JSON.parse(res.body)['Predictions']
+    body = JSON.parse(res.body)
+    predictions = body['Predictions']
     processed_predictions = Array.new()
     num_buses = 0
     predictions.each do |prediction|
       if num_buses < prediction_limit
-        processed_predictions.push( { label: "#{prediction['RouteID']} #{prediction['DirectionText'][0..char_limit]}", value: "#{prediction['Minutes']}"} )
+        processed_predictions.push( { destination: "#{prediction['DirectionText']}", minutes: "#{prediction['Minutes']}", route_id: prediction['RouteID']} )
         num_buses += 1
       end
     end
-    send_event("wmata-#{stop_id}", { items: processed_predictions })
+    send_event("wmata-#{stop_id}", { predictions: processed_predictions, stop_name: body['StopName'], agency_name: "Metrobus" })
 
   end
 end

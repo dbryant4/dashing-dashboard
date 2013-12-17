@@ -5,7 +5,6 @@ wmata-api-keys:
   - key3
 bus:
   defaults:
-    char_limit: 23
     prediction_limit: 7
   stops:
     1002873:
@@ -14,7 +13,6 @@ bus:
     1003728:
 rail:
   defaults:
-    char_limit: 23
     prediction_limit: 7
   stations:
     galleryplace:

@@ -18,12 +18,6 @@ SCHEDULER.every '30s', :first_in => 0  do
       prediction_limit = wmata_config['rail']['defaults']['prediction_limit']
     end
 
-    if options['char_limit']
-      char_limit = options['char_limit']
-    else
-      char_limit = wmata_config['rail']['defaults']['char_limit']
-    end
-
     uri = URI("#{api_uri}#{codes}?api_key=#{api_key}")
     req = Net::HTTP::Get.new(uri.request_uri)
     res = Net::HTTP.start(uri.hostname, uri.port) {|http|
@@ -35,7 +29,11 @@ SCHEDULER.every '30s', :first_in => 0  do
     num_trains = 0
     next_trains.each do |train|
       if num_trains < prediction_limit then
-        trains.push( { label: "#{train['Line']} #{train['DestinationName'][0..char_limit]}", value: "#{train['Min']}", color: train['Line']} )
+        trains.push( { label: "#{train['Line']} #{train['DestinationName']}",
+                       value: "#{train['Min']}",
+                       color: train['Line'],
+                       flash: train['Min'].to_i == 0 ? 1: 0
+        } )
         num_trains += 1
       end
     end

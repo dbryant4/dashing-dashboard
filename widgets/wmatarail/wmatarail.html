@@ -2,7 +2,7 @@
 
 <ul class="list-nostyle">
   <li data-foreach-item="items" data-bind-class="item.color">
-    <span class="label" data-bind="item.label"></span>
+    <span class="label" data-bind="item.label | truncate 25, '...'"></span>
     <span class="value" data-bind="item.value"></span>
   </li>
 </ul>
