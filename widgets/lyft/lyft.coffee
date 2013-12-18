@@ -137,7 +137,7 @@ class Dashing.Lyft extends Dashing.Widget
         }
       ]
     else
-      []
+      style = []
 
     options =
       zoom: 2
@@ -146,7 +146,7 @@ class Dashing.Lyft extends Dashing.Widget
       draggable: false
       scrollwheel: false
       disableDoubleClickZoom: true
-      styles: style
+      #styles: style
 
     mapTypeId: google.maps.MapTypeId.ROADMAP
     @lyft = new google.maps.Map $(@node)[0], options

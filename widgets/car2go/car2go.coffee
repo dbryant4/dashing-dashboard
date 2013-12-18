@@ -137,7 +137,7 @@ class Dashing.Car2go extends Dashing.Widget
         }
       ]
     else
-      []
+      style = []
 
     options =
       zoom: 2
@@ -146,7 +146,7 @@ class Dashing.Car2go extends Dashing.Widget
       draggable: false
       scrollwheel: false
       disableDoubleClickZoom: true
-      styles: style
+      #styles: style
 
     mapTypeId: google.maps.MapTypeId.ROADMAP
     @car2go = new google.maps.Map $(@node)[0], options
