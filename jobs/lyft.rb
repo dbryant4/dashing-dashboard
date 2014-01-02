@@ -4,7 +4,7 @@ lyft_config = YAML.load_file('lyft-config.yaml')
 
 api_uri="https://api.lyft.com/users/#{lyft_config['user']['id']}/location"
 
-SCHEDULER.every '10s', :first_in => 0  do
+SCHEDULER.every '30s', :first_in => 0  do
   uri = URI("#{api_uri}")
   http = Net::HTTP.new(uri.hostname, uri.port)
   http.use_ssl = true
