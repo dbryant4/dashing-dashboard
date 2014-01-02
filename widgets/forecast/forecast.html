@@ -1,5 +1,3 @@
-<div class="widget-title" data-bind="widget_title | raw"></div>
-<div class="updated-at" data-bind="updatedAtMessage"></div>
 
 <div>
 	<h1 class="title">RIGHT NOW</h1>
@@ -7,7 +5,16 @@
   	<div class="temp" data-bind="current_temp | raw"></div>
   	<div class="summary" data-bind="current_desc | raw"></div>
 </div>
-
+<div class="extrainfodiv">
+  <div>
+    <span class="feelslike" data-bind="feels_like | raw"></span> |
+    <span class="humidity" data-bind="current_humidity | raw"></span>
+ </div>
+  <div>
+    H <span class="high" data-bind="daily_high | raw"></span>
+    L <span class="low" data-bind="daily_low | raw"></span>
+  </div>
+</div>
 <div style="margin-top: 10px">
 	<h1 class="title">NEXT HOUR</h1>
 	<canvas id="next_icon" class="forecast-icon" width="25px" height="25px"></canvas>
@@ -19,3 +26,4 @@
 	<canvas id="later_icon" class="forecast-icon" width="25px" height="25px"></canvas>
 	<div class="summary" data-bind="later_desc | raw"></div>
 </div>
+<div class="updated-at" data-bind="updatedAtMessage"></div>

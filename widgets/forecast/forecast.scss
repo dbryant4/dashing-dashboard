@@ -13,10 +13,9 @@ $light-color: rgba(255, 255, 255, 0.7);
   
     color: $light-color;
     font-size: 15px;
-    text-align: left;
+    text-align: bottom;
     text-transform: uppercase;
     position: absolute;
-    top: 5px;
 
 	img {
     	vertical-align: baseline;
@@ -36,9 +35,9 @@ $light-color: rgba(255, 255, 255, 0.7);
 
   .updated-at {
     color: rgba(0, 0, 0, 0.3);
-    top: 5px;
     right: 10px;
     left: auto;
+    text-align: bottom;
   }
 
   .title {
@@ -51,6 +50,36 @@ $light-color: rgba(255, 255, 255, 0.7);
     color: $full-color;
     text-align: left;
     font-size: 45px;
+  }
+
+  .extrainfodiv {
+    top: 45px;
+    position: absolute;
+    right: 10px;
+  }
+  .high {
+    color: $full-color;
+    text-align: right;
+    font-size: 35px;
+    right: 5px;
+  }
+  .low {
+    color: $full-color;
+    text-align: right;
+    font-size: 35px;
+    right: 5px;
+  }
+  .humidity {
+    color: $full-color;
+    text-align: right;
+    font-size: 35px;
+    right: 5px;
+  }
+  .feelslike {
+    color: $full-color;
+    text-align: right;
+    font-size: 35px;
+    right: 5px;
   }
 
   .summary {
