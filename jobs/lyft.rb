@@ -11,7 +11,7 @@ SCHEDULER.every '30s', :first_in => 0  do
   #http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
   request = Net::HTTP::Put.new(uri.path, initheader = {
-    'User-Agent' => 'Lyft:android:4.4.2:1.3.1.21',
+    'User-Agent' => 'Lyft:android:4.4.2:2.3.1',
     'user-device' => 'LGE Nexus 5',
     'Content-Type' => 'application/json; charset=UTF-8',
     'session' => lyft_config['user']['session_id'],
