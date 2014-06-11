@@ -1,5 +1,5 @@
 # This script connects to WMATA's API. Therefore, you need a WMATA api key.
-api_uri = 'http://capitalbikeshare.com/data/stations/bikeStations.xml'
+api_uri = 'http://www.capitalbikeshare.com/data/stations/bikeStations.xml'
 
 require 'xmlsimple'
 
