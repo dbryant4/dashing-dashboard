@@ -1,0 +1,10 @@
+---
+# Get a server token from developer.uber.com
+server_token: 'sfksffnfn'
+points_of_interest:
+  home:
+    latitude: 33.9354
+    longitude: -75.0987
+  work:
+    latitude: 33.85551
+    longitude: -75.0212
