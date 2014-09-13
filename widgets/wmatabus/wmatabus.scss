@@ -17,9 +17,12 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 300px 300px;
+  overflow: hidden;
+  white-space: nowrap;
 
   .title {
     color: $title-color;
+    white-space: normal;
   }
 
   ol, ul {
@@ -36,8 +39,19 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     margin-bottom: 5px;
   }
 
+  .routeid {
+    float: left;
+    margin-right: 12px;
+  }
+
   .destination {
     color: $label-color;
+    white-space: nowrap;
+  }
+
+  .icons {
+    float: right;
+    margin-left: 12px;
   }
 
   .minutes {
@@ -54,5 +68,4 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   .more-info {
     color: $moreinfo-color;
   }
-
 }

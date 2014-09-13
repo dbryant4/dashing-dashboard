@@ -1,5 +1,10 @@
 require 'yaml'
 
+# fleet info from http://en.wikipedia.org/wiki/Metrobus_(Washington,_D.C.)
+articulated_buses = Array (5301..5452)
+new_buses = Array (6100..8105)
+new_buses += Array (3036..3087)
+
 wmata_config = YAML.load_file('wmata-config.yaml')
 
 # This script connects to WMATA's API. Therefore, you need a WMATA api key.
@@ -29,7 +34,15 @@ SCHEDULER.every '30s', :first_in => 0  do
     num_buses = 0
     predictions.each do |prediction|
       if num_buses < prediction_limit
-        processed_predictions.push( { destination: "#{prediction['DirectionText']}", minutes: "#{prediction['Minutes']}", route_id: prediction['RouteID']} )
+        new = new_buses.include? prediction['VehicleID'].to_i
+        articulated = articulated_buses.include? prediction['VehicleID'].to_i
+        processed_predictions.push( { destination: "#{prediction['DirectionText']}",
+                                      minutes: "#{prediction['Minutes']}",
+                                      route_id: prediction['RouteID'],
+                                      vehicle_id: prediction['VehicleID'],
+                                      new: new,
+                                      articulated: articulated
+        } )
         num_buses += 1
       end
     end
