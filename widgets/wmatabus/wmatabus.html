@@ -4,6 +4,8 @@
 <ul>
   <li data-foreach-prediction="predictions">
   <span class="minutes" data-bind="prediction.minutes"></span>
+  <span class="routeid" data-bind="prediction.route_id"></span>
+  <span class="destination" data-bind="prediction.destination | truncate 24"></span>
   <span class="icons">
     <span data-showif="prediction.new">
     &#9733;
@@ -12,8 +14,6 @@
       &#9734;
     </span>
   </span>
-  <span class="routeid" data-bind="prediction.route_id"></span>
-  <span class="destination" data-bind="prediction.destination | truncate 24"></span>
   </li>
 </ul>
 
