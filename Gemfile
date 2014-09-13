@@ -9,3 +9,6 @@ gem 'nokogiri'
 gem 'htmlentities'
 gem 'nest_thermostat'
 gem 'xml-simple'
+
+gem 'therubyracer'
+gem 'execjs'
