@@ -2,5 +2,6 @@
 history.yml
 wmata-config.yaml
 car2go-config.yaml
+uber-config.yaml
 lyft-config.yaml
 Gemfile.lock

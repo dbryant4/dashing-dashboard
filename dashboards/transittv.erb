@@ -4,12 +4,12 @@ $(function() {
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 5
   Dashing.cycleDashboards({timeInSeconds: 60, stagger: true});
-  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":2,"size_y":1}]')
+  Dashing.cycleGridsterLayout('[[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1}]]');
 });
 </script>
 
 
-<% content_for :title do %>1080p Transit Near Home Dashboard<% end %>
+<% content_for :title do %>Transportation Near Home<% end %>
 
 <div class="gridster">
   <ul>
@@ -66,7 +66,11 @@ $(function() {
       <div data-id="forecast" data-view="Forecast" data-widget_title="<img src='http://forecast.io/favicon.ico' />Weather Forecast"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="uber-times-home" data-view="Uber" data-unordered="true" data-title="Uber Time Estimates" style="background-color:#3D3D3D;"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="wmata-railincidents" data-view="List" data-unordered="true" data-title="Metro Rail Incidents" data-moreinfo=""></div>
       <i class="icon-exclamation-triangle icon-background"></i>
     </li>
