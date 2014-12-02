@@ -1,0 +1,70 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 5
+  Dashing.cycleDashboards({timeInSeconds: 60, stagger: true});
+  Dashing.cycleGridsterLayout('[[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1}]]');
+});
+</script>
+
+
+<% content_for :title do %>1080p Transit Near Bloomingdale Dashboard<% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock" style="background-color:#32c9a9"></div>
+      <i class="icon-time icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-newyorkave" data-view="Wmatarail" data-unordered="true" style="background-color:#3D3D3D;" data-title="New York Ave" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="uber-times-bloomingdale" data-view="Uber" data-unordered="true" data-title="Uber Time Estimates" style="background-color:#3D3D3D;"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-shaw" data-view="Wmatarail" data-unordered="true" style="background-color:#686968;" data-title="Shaw" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="wmata-railincidents" data-view="List" data-unordered="true" data-title="Metro Rail Incidents" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-1001641" data-view="Wmatabus" data-unordered="true" style="background-color:#dc5945;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-1001716" data-view="Wmatabus" data-unordered="true" style="background-color:#dc5945;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-1001682" data-view="Wmatabus" data-unordered="true" style="background-color:#dc5945;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="car2go-bloomingdale" data-view="Car2go" data-title="Car2go Map" data-type="pin" data-color="#222222"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-147" data-view="Cabi" data-unordered="true" style="background-color:#12b0c5;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cabi-249" data-view="Cabi" data-unordered="true" style="background-color:#9c4274;" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wmata-bus-alerts" data-view="News" data-title="WMATA Bus Advisories" data-interval="3"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="forecast" data-view="Forecast" data-widget_title="<img src='http://forecast.io/favicon.ico' />Weather Forecast"></div>
+    </li>
+
+  </ul>
+</div>
